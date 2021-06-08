@@ -15,6 +15,7 @@ export const Logo = styled.div`
   color: #ff6000;
   font-size: 30px;
   font-weight: 700;
+  width: 262px;
 `;
 
 export const SearchBar = styled.div`
@@ -37,6 +38,9 @@ export const SearchCol = styled.div`
   & > div:last-child {
     display: ${(props) => (props.searchFocus ? "flex" : "none")};
     flex-direction: row;
+    color: #9b9b9b;
+    font-size: 12px;
+    padding: 16px 32px 16px;
   }
 `;
 export const SearchIcon = styled.div`
@@ -64,11 +68,54 @@ export const Input = styled.input`
 export const SearchButton = styled.button`
   flex: 0.1;
   background-color: ${(props) => (props.searchFocus ? "#ff6000" : "#919191")};
+  border: 2px solid ${(props) => (props.searchFocus ? "#ff6000" : "#919191")};
   color: white;
   font-size: 15px;
   font-weight: 600;
   padding: 0px 16px;
   outline: none;
-  border: none;
   margin: 0px 0px 0px auto;
+`;
+export const MyAccount = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid #919191;
+  border-radius: 5;
+  margin: 0px 0px 0px 12px;
+  padding: 9px 10px 6px 15px;
+  width: 157px;
+  & > div:first-child svg {
+    color: #919191;
+    margin-right: 10px;
+  }
+  & > div:last-child {
+    display: flex;
+    flex-direction: column;
+  }
+  & > div:last-child span:first-child {
+    color: #484848;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  & > div:last-child span:last-child {
+    color: #484848;
+    font-size: 10px;
+  }
+`;
+export const MyCart = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #919191;
+  width: 136px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0px 0px 0px 12px;
+  padding: 15px 24px 14px 14px;
+  color: white;
+  & svg {
+    margin-right: 10px;
+  }
 `;

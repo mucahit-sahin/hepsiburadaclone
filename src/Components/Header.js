@@ -7,7 +7,10 @@ import {
   Input,
   SearchButton,
   SearchCol,
+  MyAccount,
+  MyCart,
 } from "../Styles/Header.Style";
+import Location from "./Location";
 
 const Header = () => {
   const [searchFocus, setSearchFocus] = React.useState(false);
@@ -35,13 +38,55 @@ const Header = () => {
           </div>
           <div>
             <span>
-              Aramaya başlamak için <strong>en az 2 karakter</strong>
+              Aramaya başlamak için <strong>en az 2 karakter </strong>
               yazmalısınız
             </span>
           </div>
         </SearchCol>
         <SearchButton searchFocus={searchFocus}>ARA</SearchButton>
       </SearchBar>
+      <Location />
+      <MyAccount>
+        <div>
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="css-i6dzq1"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div>
+          <span>Giriş Yap</span>
+          <span>Veya üye ol</span>
+        </div>
+      </MyAccount>
+      <MyCart>
+        <div>
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+        </div>
+        <span>Sepetim</span>
+      </MyCart>
     </Container>
   );
 };
