@@ -43,6 +43,7 @@ export const LocationModal = styled.div`
   padding: 24px 16px 16px;
   display: flex;
   flex-direction: column;
+  background-color: white;
   & > span {
     font-size: 14px;
     font-weight: 600;
@@ -63,6 +64,7 @@ export const ChooseCity = styled.div`
   border-radius: 8px;
   padding: 12px;
   height: 192px;
+  background-color: white;
   & > div:first-child {
     display: flex;
     flex-direction: row;
