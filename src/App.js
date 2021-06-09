@@ -2,6 +2,7 @@ import "./App.css";
 import ColorfulBorder from "./Components/ColorfulBorder";
 import Header from "./Components/Header";
 import Menu from "./Components/Menu";
+import Slider from "./Components/Slider";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <ColorfulBorder />
       <Menu />
+      <Slider />
     </div>
   );
 }
