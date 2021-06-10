@@ -123,8 +123,7 @@ export const SlidesRow = styled.div`
   justify-content: center;
   padding: 0px 0px 32px;
   margin-top: 18px;
-  & > div:first-child,
-  & > div:last-child {
+  & > button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,23 +131,23 @@ export const SlidesRow = styled.div`
     padding: 0px 20px;
     border-radius: 18px;
     border: 2px solid #fff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.15px;
+    text-align: center;
+    background-color: transparent;
   }
-  & > div:first-child {
+  & > button:first-child {
     margin-right: 10px;
   }
-  & > div:last-child {
+  & > button:last-child {
     margin-left: 10px;
   }
   & svg {
     stroke: white;
   }
   & span {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: -0.15px;
-    padding: 0px 8px 0px 0px;
-    text-align: center;
   }
 `;
 export const Slides = styled.div`

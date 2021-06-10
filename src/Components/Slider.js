@@ -44,9 +44,9 @@ const Slider = () => {
     [
       {
         smallimage:
-          "https://lh3.googleusercontent.com/proxy/XmtXMBqwX9BwQ8CQLjoY7KpWq4ueExH57rEHpISaN49LtsY5Q7IuefMidCxSPa43KLWhyPaaNTX3a7kWymGixZS3aNnGyIpDFAO5QZSd3N4NfWslpm1pRnCObi3yqFPIgWzofaKiEqTUrtQ5xh8ppgYCVN7MfQUhVeY",
+          "https://static6.depositphotos.com/1162085/648/v/600/depositphotos_6489373-stock-illustration-music-instruments.jpg",
         banner:
-          "https://lh3.googleusercontent.com/proxy/XmtXMBqwX9BwQ8CQLjoY7KpWq4ueExH57rEHpISaN49LtsY5Q7IuefMidCxSPa43KLWhyPaaNTX3a7kWymGixZS3aNnGyIpDFAO5QZSd3N4NfWslpm1pRnCObi3yqFPIgWzofaKiEqTUrtQ5xh8ppgYCVN7MfQUhVeY",
+          "https://static6.depositphotos.com/1162085/648/v/600/depositphotos_6489373-stock-illustration-music-instruments.jpg",
         description: "En sevilen enstrumanlarda",
         promotion: "100 TL'ye Kadar İndirim",
       },
@@ -62,9 +62,8 @@ const Slider = () => {
     [
       {
         smallimage:
-          "https://lh3.googleusercontent.com/proxy/uxy4BuMQ_i5oPzMVEWRSMUAg8bFwA03saYSZCbULEQ38eWUTXDPEmJktha6Km0gLuqbhoEFBj7g6zcE_bgeO-Mz90wY9pATf",
-        banner:
-          "https://lh3.googleusercontent.com/proxy/uxy4BuMQ_i5oPzMVEWRSMUAg8bFwA03saYSZCbULEQ38eWUTXDPEmJktha6Km0gLuqbhoEFBj7g6zcE_bgeO-Mz90wY9pATf",
+          "https://www.abartiyoruz.com/upload/news/medikalurunler.jpg",
+        banner: "https://www.abartiyoruz.com/upload/news/medikalurunler.jpg",
         description: "Sağlık Ürünlerinde",
         promotion: "50 TL'ye Kadar İndirim",
       },
@@ -130,7 +129,7 @@ const Slider = () => {
         </ImageCard>
       </Content>
       <SlidesRow>
-        <div
+        <button
           onClick={() => {
             if (index !== 0) {
               setIndex(index - 1);
@@ -160,7 +159,7 @@ const Slider = () => {
           {index === 0 && categoryIndex !== 0 && (
             <span>{categories[categoryIndex - 1]}</span>
           )}
-        </div>
+        </button>
         <Slides>
           {slides[categoryIndex].map((x, i) => (
             <SlideItem
@@ -170,7 +169,7 @@ const Slider = () => {
             />
           ))}
         </Slides>
-        <div
+        <button
           onClick={() => {
             if (index !== slides[categoryIndex].length - 1) {
               setIndex(index + 1);
@@ -201,7 +200,7 @@ const Slider = () => {
               stroke-width="1.5"
             />
           </svg>
-        </div>
+        </button>
       </SlidesRow>
     </SliderStyle>
   );
