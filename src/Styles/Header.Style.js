@@ -30,6 +30,7 @@ export const SearchCol = styled.div`
   flex-direction: column;
   position: absolute;
   background-color: white;
+  z-index: ${(props) => props.searchFocus && "2"};
   border: ${(props) =>
     props.searchFocus ? "2px solid #ff6000" : "2px solid #919191"};
   & > div {

@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import {
   Container,
   Logo,
@@ -13,10 +14,12 @@ import {
 import Location from "./Location";
 
 const Header = () => {
+  const history = useHistory();
   const [searchFocus, setSearchFocus] = React.useState(false);
+  const [value, setValue] = React.useState("");
   return (
     <Container>
-      <Logo>hepsiorada</Logo>
+      <Logo onClick={() => history.push("/")}>hepsiorada</Logo>
       <SearchBar>
         <SearchCol searchFocus={searchFocus}>
           <div>
@@ -32,6 +35,8 @@ const Header = () => {
             </SearchIcon>
             <Input
               placeholder="Ürün, kategori ve marka ara"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
               onFocus={() => setSearchFocus(true)}
               onBlur={() => setSearchFocus(false)}
             />
@@ -43,7 +48,12 @@ const Header = () => {
             </span>
           </div>
         </SearchCol>
-        <SearchButton searchFocus={searchFocus}>ARA</SearchButton>
+        <SearchButton
+          searchFocus={searchFocus}
+          onClick={() => history.push(`/${value}`)}
+        >
+          ARA
+        </SearchButton>
       </SearchBar>
       <Location />
       <MyAccount>

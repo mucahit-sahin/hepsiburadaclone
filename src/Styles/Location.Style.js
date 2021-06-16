@@ -36,7 +36,7 @@ export const Location = styled.div`
 `;
 export const LocationModal = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: 6;
   top: 50px;
   right: 0px;
   width: 225px;

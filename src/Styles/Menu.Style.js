@@ -18,7 +18,6 @@ export const MenuItems = styled.ul`
   padding: 0px;
 `;
 export const MenuItem = styled.li`
-  z-index: 0;
   display: flex;
   align-items: center;
   height: 56px;
