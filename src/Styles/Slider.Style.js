@@ -163,3 +163,66 @@ export const SlideItem = styled.img`
   border-radius: 10px;
   border: ${(props) => props.active && "2px solid white"};
 `;
+//mobile slider
+export const MobileSlideStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const MobileHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow-x: scroll;
+`;
+export const MobileHeaderItem = styled.div`
+  font-size: ${(props) => (props.active ? "20" : "14")}px;
+  color: ${(props) => (props.active ? "#484848" : "#919191")};
+  font-weight: 600;
+  margin-left: 15px;
+`;
+
+export const MobileContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 260px;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+`;
+export const MobileSlideItem = styled.div`
+  position: absolute;
+  left: ${(props) => props.index * 100}%;
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  background-color: #ff5906;
+  border-radius: 10px;
+  & > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+  & > div:first-child > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  & > div:last-child {
+    height: 20%;
+    width: inherit;
+    background-color: #ff5906;
+    font-size: 16px;
+    color: white;
+    letter-spacing: -0.32px;
+    padding: 8px 16px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+`;
+//export const SlideItem = styled.div``;
+//export const SlideItem = styled.div``;

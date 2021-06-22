@@ -10,9 +10,26 @@ import {
   SlidesRow,
   Slides,
   SlideItem,
+  MobileSlideStyle,
+  MobileHeader,
+  MobileHeaderItem,
+  MobileContent,
+  MobileSlideItem,
 } from "../Styles/Slider.Style";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.scss";
 
 const Slider = () => {
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  React.useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   // Fake Slide Data
   const slides = [
     [
@@ -84,6 +101,73 @@ const Slider = () => {
   ]);
   const [categoryIndex, setCategoryIndex] = React.useState(0);
   const [index, setIndex] = React.useState(0);
+  if (windowWidth <= 600) {
+    return (
+      <MobileSlideStyle>
+        <MobileHeader>
+          {categories.map((category, i) => (
+            <MobileHeaderItem
+              active={i === categoryIndex}
+              onClick={() => {
+                setCategoryIndex(i);
+                setIndex(0);
+              }}
+            >
+              <span>{category}</span>
+            </MobileHeaderItem>
+          ))}
+        </MobileHeader>
+        <Swiper
+          style={{ width: "100%", height: "260px", padding: "10px" }}
+          spaceBetween={10}
+        >
+          {slides[categoryIndex].map((slide, i) => (
+            <SwiperSlide
+              style={{ width: "90%" }}
+              index={i}
+              style={{
+                backgroundColor: "#ff5906",
+                borderRadius: "10px",
+              }}
+            >
+              <div
+                style={{
+                  height: "80%",
+                }}
+              >
+                <img
+                  src={slide.banner}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                  }}
+                  alt="banner"
+                />
+              </div>
+              <div
+                style={{
+                  height: "20%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "16px",
+                  fontWeight: "600",
+                  color: "white",
+                  letterSpacing: "-0.32px",
+                  padding: "8px 16px",
+                }}
+              >
+                <span>{slide.description}</span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </MobileSlideStyle>
+    );
+  }
   return (
     <SliderStyle>
       <Header>

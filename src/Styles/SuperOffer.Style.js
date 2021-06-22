@@ -5,7 +5,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  line-height: 16.8px;
   padding: 24px 12px 33px;
   text-align: center;
   position: relative;
@@ -24,6 +23,12 @@ export const Header = styled.div`
 `;
 export const ImgBox = styled.div`
   height: 182px;
+  @media (max-width: 500px) {
+    height: 150px;
+    & > img {
+      height: 100%;
+    }
+  }
 `;
 export const Prices = styled.div`
   display: flex;

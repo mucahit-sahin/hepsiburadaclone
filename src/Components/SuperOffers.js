@@ -61,7 +61,7 @@ const SuperOffers = () => {
               if (left !== 0) setLeft((left) => left + 222);
             }}
           >
-            -
+            <i class="fas fa-chevron-left"></i>
           </button>
         )}
         <SuperOfferList ref={list} left={left}>
@@ -75,7 +75,7 @@ const SuperOffers = () => {
               setLeft((left) => left - 222);
           }}
         >
-          +
+          <i class="fas fa-chevron-right"></i>
         </button>
       </Content>
     </Container>

@@ -4,6 +4,9 @@ export const Location = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  @media (max-width: 500px) {
+    display: none;
+  }
   & > div:first-child {
     display: flex;
     flex-direction: row;

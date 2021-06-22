@@ -8,6 +8,9 @@ export const Menu = styled.div`
     display: block;
     margin: 0 auto;
     position: relative;
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 `;
 export const MenuItems = styled.ul`

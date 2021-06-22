@@ -10,7 +10,7 @@ import {
 const Index = () => {
   document.title = "Hepsiorada Clone  ";
   return (
-    <div>
+    <>
       <Header />
       <ColorfulBorder />
       <Menu />
@@ -18,7 +18,7 @@ const Index = () => {
         <Slider />
         <SuperOffers />
       </main>
-    </div>
+    </>
   );
 };
 

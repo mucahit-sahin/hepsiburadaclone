@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
+export const Product = styled.div`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (max-width: 500px) {
+    width: 100vw;
+  }
+`;
 export const ProductCategory = styled.div`
   display: flex;
   flex-direction: row;
   color: #919191;
   font-size: 12px;
   font-weight: 700;
-  margin: 5px 0px;
+  margin: 5px;
   & > span {
     margin-right: 10px;
     display: flex;
@@ -28,12 +36,19 @@ export const Content = styled.section`
   flex-direction: row;
   border: solid 1px #e5e5e5;
   border-radius: 8px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
 `;
 export const ImageBox = styled.div`
   width: 50%;
   position: relative;
   display: flex;
   flex-direction: column;
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 400px;
+  }
 `;
 export const Slides = styled.div`
   position: relative;
@@ -133,6 +148,9 @@ export const Details = styled.div`
   background-color: #f5f5f5;
   border-radius: 0px 0px 8px;
   padding: 20px 24px;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 export const ProductName = styled.span`
   display: block;

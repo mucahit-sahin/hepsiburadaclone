@@ -8,6 +8,10 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  @media (max-width: 500px) {
+    flex-direction: column;
+    width: 100vw;
+  }
 `;
 
 export const Logo = styled.div`
@@ -16,20 +20,39 @@ export const Logo = styled.div`
   font-size: 30px;
   font-weight: 700;
   width: 262px;
+  cursor: pointer;
+  @media (max-width: 500px) {
+    width: min-content;
+    font-size: 20px;
+    margin: 10px 15px;
+  }
 `;
 
 export const SearchBar = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   width: 440px;
   height: 50px;
+  position: relative;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 export const SearchCol = styled.div`
   flex: 0.9;
   display: flex;
   flex-direction: column;
   position: absolute;
+  left: 0px;
   background-color: white;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    margin: 0px;
+    position: static;
+  }
   z-index: ${(props) => props.searchFocus && "2"};
   border: ${(props) =>
     props.searchFocus ? "2px solid #ff6000" : "2px solid #919191"};
@@ -43,6 +66,9 @@ export const SearchCol = styled.div`
     color: #9b9b9b;
     font-size: 12px;
     padding: 16px 32px 16px;
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 `;
 export const SearchIcon = styled.div`
@@ -66,6 +92,9 @@ export const Input = styled.input`
   &:focus + button {
     background-color: #ff6000;
   }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 export const SearchButton = styled.button`
   flex: 0.1;
@@ -77,6 +106,9 @@ export const SearchButton = styled.button`
   padding: 0px 16px;
   outline: none;
   margin: 0px 0px 0px auto;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 export const MyAccount = styled.div`
   display: flex;
@@ -87,6 +119,9 @@ export const MyAccount = styled.div`
   margin: 0px 0px 0px 12px;
   padding: 9px 10px 6px 15px;
   width: 157px;
+  @media (max-width: 500px) {
+    display: none;
+  }
   & > div:first-child svg {
     color: #919191;
     margin-right: 10px;
@@ -119,5 +154,8 @@ export const MyCart = styled.div`
   color: white;
   & svg {
     margin-right: 10px;
+  }
+  @media (max-width: 500px) {
+    display: none;
   }
 `;

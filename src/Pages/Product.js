@@ -1,9 +1,9 @@
 import React from "react";
 import { Header, ColorfulBorder, Menu } from "../Components/index";
-import { ProductCategory } from "../Styles/Product.Style";
+import { ProductCategory, Product } from "../Styles/Product.Style";
 import ProductDetails from "../Components/ProductDetails";
 
-const Index = () => {
+const ProductPage = () => {
   document.title = "Ürün Sayfası ";
   return (
     <div>
@@ -17,23 +17,17 @@ const Index = () => {
           zIndex: 10,
         }}
       >
-        <div
-          style={{
-            width: 1200,
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
-        >
+        <Product>
           <ProductCategory>
             <span>Ana Sayfa</span>
             <span>Ev Elektronik Ürünleri</span>
             <span>Elektrikli Ev Aletleri</span>
           </ProductCategory>
           <ProductDetails />
-        </div>
+        </Product>
       </main>
     </div>
   );
 };
 
-export default Index;
+export default ProductPage;
