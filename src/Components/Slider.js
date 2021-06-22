@@ -13,8 +13,6 @@ import {
   MobileSlideStyle,
   MobileHeader,
   MobileHeaderItem,
-  MobileContent,
-  MobileSlideItem,
 } from "../Styles/Slider.Style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
@@ -123,9 +121,9 @@ const Slider = () => {
         >
           {slides[categoryIndex].map((slide, i) => (
             <SwiperSlide
-              style={{ width: "90%" }}
               index={i}
               style={{
+                width: "90%",
                 backgroundColor: "#ff5906",
                 borderRadius: "10px",
               }}
