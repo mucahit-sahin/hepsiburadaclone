@@ -110,6 +110,7 @@ const Slider = () => {
                 setCategoryIndex(i);
                 setIndex(0);
               }}
+              key={i}
             >
               <span>{category}</span>
             </MobileHeaderItem>
@@ -127,6 +128,7 @@ const Slider = () => {
                 backgroundColor: "#ff5906",
                 borderRadius: "10px",
               }}
+              key={i}
             >
               <div
                 style={{
@@ -176,6 +178,7 @@ const Slider = () => {
               setCategoryIndex(index);
               setIndex(0);
             }}
+            key={index}
           >
             <span>{category}</span>
           </HeaderItem>
@@ -248,6 +251,7 @@ const Slider = () => {
               src={x.smallimage}
               onClick={() => setIndex(i)}
               active={i === index}
+              key={i}
             />
           ))}
         </Slides>

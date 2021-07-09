@@ -51,7 +51,12 @@ const ProductDetails = () => {
           </button>
           <div>
             {images.map((img, i) => (
-              <img src={img} alt="previewproduct" onClick={() => setIndex(i)} />
+              <img
+                src={img}
+                alt="previewproduct"
+                onClick={() => setIndex(i)}
+                key={i}
+              />
             ))}
           </div>
           <button

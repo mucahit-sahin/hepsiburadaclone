@@ -65,8 +65,8 @@ const SuperOffers = () => {
           </button>
         )}
         <SuperOfferList ref={list} left={left}>
-          {products.map((product) => (
-            <SuperOffer product={product} />
+          {products.map((product, index) => (
+            <SuperOffer product={product} key={index} />
           ))}
         </SuperOfferList>
         <button

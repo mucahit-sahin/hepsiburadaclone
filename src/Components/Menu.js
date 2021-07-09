@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu as MenuStyle, MenuItems, MenuItem } from "../Styles/Menu.Style";
+import slugify from "slugify";
 const Menu = () => {
   const categories = [
     "Elektronik",
@@ -16,10 +17,12 @@ const Menu = () => {
     <MenuStyle>
       <div>
         <MenuItems>
-          {categories.map((category) => (
-            <MenuItem>
-              <span>{category}</span>
-            </MenuItem>
+          {categories.map((category, index) => (
+            <a href={"/category/" + slugify(category)} key={index}>
+              <MenuItem>
+                <span>{category}</span>
+              </MenuItem>
+            </a>
           ))}
         </MenuItems>
       </div>

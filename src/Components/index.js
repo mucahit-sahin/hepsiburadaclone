@@ -5,3 +5,5 @@ export { default as Menu } from "./Menu";
 export { default as Slider } from "./Slider";
 export { default as SuperOffer } from "./SuperOffer";
 export { default as SuperOffers } from "./SuperOffers";
+export { default as Products } from "./Products";
+export { default as ProductCard } from "./ProductCard";
