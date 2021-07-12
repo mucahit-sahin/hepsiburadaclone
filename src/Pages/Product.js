@@ -2,9 +2,17 @@ import React from "react";
 import { Header, ColorfulBorder, Menu } from "../Components/index";
 import { ProductCategory, Product } from "../Styles/Product.Style";
 import ProductDetails from "../Components/ProductDetails";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouteMatch } from "react-router-dom";
+import { getProduct } from "../Store/actions/ProductsActions";
 
 const ProductPage = () => {
-  document.title = "Ürün Sayfası ";
+  const dispatch = useDispatch();
+  let { url } = useRouteMatch();
+
+  dispatch(getProduct(url.split("/")[1]));
+  const { product } = useSelector((state) => state.products);
+  document.title = product.name;
   return (
     <div>
       <Header />
@@ -20,10 +28,9 @@ const ProductPage = () => {
         <Product>
           <ProductCategory>
             <span>Ana Sayfa</span>
-            <span>Ev Elektronik Ürünleri</span>
-            <span>Elektrikli Ev Aletleri</span>
+            <span>{product.category}</span>
           </ProductCategory>
-          <ProductDetails />
+          <ProductDetails product={product} />
         </Product>
       </main>
     </div>

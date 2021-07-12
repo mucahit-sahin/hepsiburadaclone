@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
 import {
   ProductsStyle,
@@ -10,11 +11,14 @@ import {
   Brands,
 } from "../Styles/Products.Style";
 import { ProductCard } from "./index";
+import { getCategoryProducts } from "../Store/actions/ProductsActions";
 
 const Products = () => {
-  let { path, url } = useRouteMatch();
-  console.log(path);
-  console.log(url);
+  const dispatch = useDispatch();
+  let { url } = useRouteMatch();
+
+  dispatch(getCategoryProducts(url.split("/")[2].replaceAll("-", " ")));
+  const { products } = useSelector((state) => state.products);
   return (
     <ProductsStyle>
       <Header>
@@ -62,41 +66,13 @@ const Products = () => {
           </Brands>
         </OptionsCol>
         <ProductsCol>
-          <ProductCard
-            name="XAF Telefon"
-            price={1599}
-            images={[
-              "https://productimages.hepsiburada.net/s/44/550/10807188914226.jpg/format:webp",
-            ]}
-          />
-          <ProductCard
-            name="XAF Telefon"
-            price={1599}
-            images={[
-              "https://productimages.hepsiburada.net/s/44/550/10807188914226.jpg/format:webp",
-            ]}
-          />
-          <ProductCard
-            name="XAF Telefon"
-            price={1599}
-            images={[
-              "https://productimages.hepsiburada.net/s/44/550/10807188914226.jpg/format:webp",
-            ]}
-          />
-          <ProductCard
-            name="XAF Telefon"
-            price={1599}
-            images={[
-              "https://productimages.hepsiburada.net/s/44/550/10807188914226.jpg/format:webp",
-            ]}
-          />
-          <ProductCard
-            name="XAF Telefon"
-            price={1599}
-            images={[
-              "https://productimages.hepsiburada.net/s/44/550/10807188914226.jpg/format:webp",
-            ]}
-          />
+          {products.map((product) => (
+            <ProductCard
+              name={product.name}
+              price={product.price}
+              images={product.images}
+            />
+          ))}
         </ProductsCol>
       </Content>
     </ProductsStyle>

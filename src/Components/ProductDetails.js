@@ -12,14 +12,9 @@ import {
   SellerRow,
 } from "../Styles/Product.Style";
 
-const ProductDetails = () => {
+const ProductDetails = ({ product }) => {
   const [index, setIndex] = React.useState(0);
   const [quantity, setQuantity] = React.useState(1);
-  const images = [
-    "https://images.philips.com/is/image/PhilipsConsumer/65PUS7805_62-IMS-tr_TR?$jpglarge$&wid=1250",
-    "https://reimg-teknosa-cloud-prod.mncdn.com/mnresize/600/600/productimage/110019481/110019481_1_MC/44448089.jpg",
-    "https://images.samsung.com/is/image/samsung/tr-fhd-t5300-ue40t5300auxtk-frontblack-237104952?$720_576_PNG$",
-  ];
   return (
     <Content>
       <ImageBox>
@@ -31,13 +26,13 @@ const ProductDetails = () => {
             <i class="fas fa-chevron-left"></i>
           </button>
           <div>
-            <img src={images[index]} alt="product" />
+            <img src={product.images[index]} alt="product" />
           </div>
           <button
             onClick={() =>
-              index < images.length - 1 && setIndex((index) => index + 1)
+              index < product.images.length - 1 && setIndex((i) => i + 1)
             }
-            disabled={index === images.length - 1}
+            disabled={index === product.images.length - 1}
           >
             <i class="fas fa-chevron-right"></i>
           </button>
@@ -50,7 +45,7 @@ const ProductDetails = () => {
             <i class="fas fa-chevron-left"></i>
           </button>
           <div>
-            {images.map((img, i) => (
+            {product.images.map((img, i) => (
               <img
                 src={img}
                 alt="previewproduct"
@@ -61,19 +56,18 @@ const ProductDetails = () => {
           </div>
           <button
             onClick={() =>
-              index < images.length - 1 && setIndex((index) => index + 1)
+              index < product.images.length - 1 &&
+              setIndex((index) => index + 1)
             }
-            disabled={index === images.length - 1}
+            disabled={index === product.images.length - 1}
           >
             <i class="fas fa-chevron-right"></i>
           </button>
         </PreviewImages>
       </ImageBox>
       <Details>
-        <ProductName>
-          Reeder P13 Blue Max Lite 16 GB (Reeder Türkiye Garantili)
-        </ProductName>
-        <BrandName>Reeder</BrandName>
+        <ProductName>{product.name}</ProductName>
+        <BrandName>{product.brand}</BrandName>
         <PriceandRatings>
           <div>
             <span>
@@ -81,13 +75,13 @@ const ProductDetails = () => {
             </span>
             <div>
               <span>1.699,00 TL</span>
-              <span>1.400,00 TL</span>
+              <span>{product.price} TL</span>
             </div>
           </div>
         </PriceandRatings>
         <SellerRow>
           <span>Satıcı: </span>
-          <span>Hepsiorada</span>
+          <span>{product.seller}</span>
         </SellerRow>
         <AddToCardRow>
           <div>

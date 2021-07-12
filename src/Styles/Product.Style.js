@@ -60,6 +60,7 @@ export const Slides = styled.div`
     left: ${(props) => props.left}px;
     transition: all 0.5s ease;
     width: 100%;
+    height: inherit;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -68,7 +69,7 @@ export const Slides = styled.div`
   & > div img {
     margin: 10px;
     width: 100%;
-    height: 100%;
+    height: inherit;
     object-fit: cover;
   }
   & > button {
