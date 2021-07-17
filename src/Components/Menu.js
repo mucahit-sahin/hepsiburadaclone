@@ -1,26 +1,18 @@
 import React from "react";
 import { Menu as MenuStyle, MenuItems, MenuItem } from "../Styles/Menu.Style";
 import slugify from "slugify";
+import { useSelector } from "react-redux";
 const Menu = () => {
-  const categories = [
-    "Elektronik",
-    "Moda",
-    "Ev, Yaşam, Kırtasiye, Ofis",
-    "Oto, Bahçe, Yapı Market",
-    "Anne, Bebek, Oyuncak",
-    "Spor, Outdoor",
-    "Kozmetik, Kişisel Bakım",
-    "Süpermarket, Pet Shop",
-    "Kitap, Müzik, Film, Hobi",
-  ];
+  const { categories } = useSelector((state) => state.categories);
+  console.log(categories);
   return (
     <MenuStyle>
       <div>
         <MenuItems>
           {categories.map((category, index) => (
-            <a href={"/category/" + slugify(category)} key={index}>
+            <a href={"/category/" + slugify(category.name)} key={index}>
               <MenuItem>
-                <span>{category}</span>
+                <span>{category.name}</span>
               </MenuItem>
             </a>
           ))}

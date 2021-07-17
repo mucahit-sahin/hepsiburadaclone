@@ -50,7 +50,7 @@ export const OptionsCol = styled.div`
 export const ChildrenCategories = styled.div`
   display: flex;
   flex-direction: column;
-  height: 240px;
+  max-height: 240px;
   & > div:first-child {
     color: #484848;
     font-size: 16px;

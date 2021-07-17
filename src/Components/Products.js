@@ -12,13 +12,18 @@ import {
 } from "../Styles/Products.Style";
 import { ProductCard } from "./index";
 import { getCategoryProducts } from "../Store/actions/ProductsActions";
+import { getChildCategories } from "../Store/actions/CategoryActions";
 
 const Products = () => {
   const dispatch = useDispatch();
   let { url } = useRouteMatch();
 
   dispatch(getCategoryProducts(url.split("/")[2].replaceAll("-", " ")));
+  dispatch(getChildCategories(url.split("/")[2]));
   const { products } = useSelector((state) => state.products);
+  const { category } = useSelector((state) => state.categories);
+
+  document.title = url.split("/")[2].replaceAll("-", " ");
   return (
     <ProductsStyle>
       <Header>
@@ -35,14 +40,9 @@ const Products = () => {
               <span>Kategori</span>
             </div>
             <div>
-              <span>Telefonlar</span>
-              <span>TV</span>
-              <span>Bilgisayarlar</span>
-              <span>Tabletler</span>
-              <span>Beyaz Eşya</span>
-              <span>deneeme</span>
-              <span>deneeme</span>
-              <span>deneeme</span>
+              {category.childs.map((subCategory) => (
+                <span>{subCategory}</span>
+              ))}
             </div>
           </ChildrenCategories>
           <Brands>
