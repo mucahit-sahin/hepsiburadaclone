@@ -7,7 +7,7 @@ const allProducts = [
       "https://images.unsplash.com/photo-1569183091671-696402586b9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
       "https://images.unsplash.com/photo-1569183091671-696402586b9c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     ],
-    price: "1500",
+    price: 1500,
     brand: "XAF",
     seller: "XAFstore",
     category: "Elektronik",
@@ -17,7 +17,7 @@ const allProducts = [
     images: [
       "https://images.unsplash.com/photo-1577979749830-f1d742b96791?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     ],
-    price: "3500",
+    price: 3500,
     brand: "XAF",
     seller: "XAFstore",
     category: "Elektronik",
@@ -27,7 +27,7 @@ const allProducts = [
     images: [
       "https://images.unsplash.com/photo-1595000788115-221ad7c82611?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=282&q=80",
     ],
-    price: "2500",
+    price: 2500,
     brand: "XAF",
     seller: "XAFstore",
     category: "Ev Yasam Kirtasiye Ofis",
@@ -37,7 +37,7 @@ const allProducts = [
     images: [
       "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
     ],
-    price: "3200",
+    price: 3200,
     brand: "XAF",
     seller: "XAFstore",
     category: "Ev Yasam Kirtasiye Ofis",
@@ -47,7 +47,7 @@ const allProducts = [
     images: [
       "https://images.unsplash.com/photo-1541591708423-9001fe827349?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
     ],
-    price: "3200",
+    price: 3200,
     brand: "XAF",
     seller: "XAFstore",
     category: "Elektronik",

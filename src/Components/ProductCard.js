@@ -8,9 +8,13 @@ import {
 } from "../Styles/ProductCard.Style";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
+import { AddToCart as AddToCartAction } from "../Store/actions/CartActions";
 import slugify from "slugify";
+import { useDispatch } from "react-redux";
 
-const ProductCard = ({ name, price, images }) => {
+const ProductCard = ({ product }) => {
+  const { name, images, price } = product;
+  const dispatch = useDispatch();
   return (
     <Card href={"/" + slugify(name)}>
       <Header>
@@ -32,7 +36,12 @@ const ProductCard = ({ name, price, images }) => {
       <Price>
         <span>{price} TL</span>
       </Price>
-      <AddToCart>
+      <AddToCart
+        onClick={(e) => {
+          e.preventDefault();
+          dispatch(AddToCartAction(product));
+        }}
+      >
         <span>Sepete Ekle</span>
       </AddToCart>
     </Card>

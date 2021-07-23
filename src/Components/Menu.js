@@ -4,7 +4,6 @@ import slugify from "slugify";
 import { useSelector } from "react-redux";
 const Menu = () => {
   const { categories } = useSelector((state) => state.categories);
-  console.log(categories);
   return (
     <MenuStyle>
       <div>

@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { AddToCart } from "../Store/actions/CartActions";
 import {
   Content,
   Details,
@@ -15,6 +17,7 @@ import {
 const ProductDetails = ({ product }) => {
   const [index, setIndex] = React.useState(0);
   const [quantity, setQuantity] = React.useState(1);
+  const dispatch = useDispatch();
   return (
     <Content>
       <ImageBox>
@@ -106,7 +109,7 @@ const ProductDetails = ({ product }) => {
               +
             </button>
           </div>
-          <button>
+          <button onClick={() => dispatch(AddToCart(product))}>
             <i class="fas fa-shopping-cart"></i>
             <span>Sepete Ekle</span>
           </button>

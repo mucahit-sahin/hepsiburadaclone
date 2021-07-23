@@ -7,6 +7,7 @@ import {
 } from "../Components";
 
 const Products = () => {
+  console.log("geldim sayfaya");
   return (
     <>
       <Header />

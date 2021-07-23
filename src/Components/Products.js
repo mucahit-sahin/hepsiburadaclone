@@ -66,12 +66,8 @@ const Products = () => {
           </Brands>
         </OptionsCol>
         <ProductsCol>
-          {products.map((product) => (
-            <ProductCard
-              name={product.name}
-              price={product.price}
-              images={product.images}
-            />
+          {products.map((product, index) => (
+            <ProductCard key={index} product={product} />
           ))}
         </ProductsCol>
       </Content>

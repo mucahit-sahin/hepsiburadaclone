@@ -143,6 +143,7 @@ export const MyAccount = styled.div`
 export const MyCart = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
   align-items: center;
   background-color: #919191;
   width: 136px;
@@ -154,6 +155,22 @@ export const MyCart = styled.div`
   color: white;
   & svg {
     margin-right: 10px;
+  }
+  & > div > span {
+    min-width: 20px;
+    width: auto;
+    height: 20px;
+    display: block;
+    font-size: 12px;
+    padding-top: 2px;
+    background-color: #fff;
+    border: 2px solid #919191;
+    border-radius: 10px;
+    color: #919191;
+    text-align: center;
+    position: absolute;
+    left: 28px;
+    top: 7px;
   }
   @media (max-width: 500px) {
     display: none;

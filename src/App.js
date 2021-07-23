@@ -3,6 +3,7 @@ import Index from "./Pages/Index";
 import Product from "./Pages/Product";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Products from "./Pages/Products";
+import Cart from "./Pages/Cart";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path="/category/:id">
           <Products />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         <Route path="/*">
           <Product />

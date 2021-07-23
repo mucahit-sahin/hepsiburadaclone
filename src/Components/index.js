@@ -7,3 +7,5 @@ export { default as SuperOffer } from "./SuperOffer";
 export { default as SuperOffers } from "./SuperOffers";
 export { default as Products } from "./Products";
 export { default as ProductCard } from "./ProductCard";
+export { default as Cart } from "./Cart";
+export { default as CartItem } from "./CartItem";

@@ -43,6 +43,7 @@ export const AddToCart = styled.button`
   position: absolute;
   left: 50%;
   bottom: 20px;
+  z-index: 50;
   transform: translateX(-50%);
   width: 80%;
   background-color: #e35600;

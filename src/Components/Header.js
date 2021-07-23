@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import {
   Container,
@@ -17,6 +18,7 @@ const Header = () => {
   const history = useHistory();
   const [searchFocus, setSearchFocus] = React.useState(false);
   const [value, setValue] = React.useState("");
+  const cart = useSelector((state) => state.cart);
   return (
     <Container>
       <Logo onClick={() => history.push("/")}>hepsiorada</Logo>
@@ -78,7 +80,7 @@ const Header = () => {
           <span>Veya üye ol</span>
         </div>
       </MyAccount>
-      <MyCart>
+      <MyCart onClick={() => history.push("/cart")}>
         <div>
           <svg
             viewBox="0 0 24 24"
@@ -94,6 +96,7 @@ const Header = () => {
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
           </svg>
+          <span>{cart.length}</span>
         </div>
         <span>Sepetim</span>
       </MyCart>
