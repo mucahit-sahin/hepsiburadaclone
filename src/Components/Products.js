@@ -13,6 +13,7 @@ import {
 import { ProductCard } from "./index";
 import { getCategoryProducts } from "../Store/actions/ProductsActions";
 import { getChildCategories } from "../Store/actions/CategoryActions";
+import NotFound from "./NotFound";
 
 const Products = () => {
   const dispatch = useDispatch();
@@ -65,11 +66,15 @@ const Products = () => {
             </div>
           </Brands>
         </OptionsCol>
-        <ProductsCol>
-          {products.map((product, index) => (
-            <ProductCard key={index} product={product} />
-          ))}
-        </ProductsCol>
+        {products.length !== 0 ? (
+          <ProductsCol>
+            {products.map((product, index) => (
+              <ProductCard key={index} product={product} />
+            ))}
+          </ProductsCol>
+        ) : (
+          <NotFound value={url.split("/")[2].replaceAll("-", " ")} />
+        )}
       </Content>
     </ProductsStyle>
   );

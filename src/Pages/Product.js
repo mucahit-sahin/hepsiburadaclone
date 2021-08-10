@@ -1,10 +1,10 @@
 import React from "react";
-import { Header, ColorfulBorder, Menu } from "../Components/index";
 import { ProductCategory, Product } from "../Styles/Product.Style";
 import ProductDetails from "../Components/ProductDetails";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
 import { getProduct } from "../Store/actions/ProductsActions";
+import NotFound from "../Components/NotFound";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
@@ -12,12 +12,9 @@ const ProductPage = () => {
 
   dispatch(getProduct(url.split("/")[1]));
   const { product } = useSelector((state) => state.products);
-  document.title = product.name;
+  document.title = product?.name || "Not Found";
   return (
     <div>
-      <Header />
-      <ColorfulBorder />
-      <Menu />
       <main
         style={{
           width: "100%",
@@ -25,13 +22,17 @@ const ProductPage = () => {
           zIndex: 10,
         }}
       >
-        <Product>
-          <ProductCategory>
-            <span>Ana Sayfa</span>
-            <span>{product.category}</span>
-          </ProductCategory>
-          <ProductDetails product={product} />
-        </Product>
+        {product ? (
+          <Product>
+            <ProductCategory>
+              <span>Ana Sayfa</span>
+              <span>{product.category}</span>
+            </ProductCategory>
+            <ProductDetails product={product} />
+          </Product>
+        ) : (
+          <NotFound value={url.split("/")[1]} />
+        )}
       </main>
     </div>
   );
